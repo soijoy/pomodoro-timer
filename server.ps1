@@ -1,4 +1,4 @@
-$port = 8080
+$port = if ($env:PORT) { [int]$env:PORT } else { 8080 }
 $root = $PSScriptRoot
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")

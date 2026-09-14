@@ -28,12 +28,6 @@ let isRunning = false;
 
 progressRing.style.strokeDasharray = `${CIRCUMFERENCE}`;
 
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60).toString().padStart(2, '0');
-  const s = Math.floor(seconds % 60).toString().padStart(2, '0');
-  return `${m}:${s}`;
-}
-
 function updateDisplay() {
   timeDisplay.textContent = formatTime(remainingSeconds);
   const progress = remainingSeconds / totalSeconds;
