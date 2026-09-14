@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポモドーロタイマー</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>🍅 ポモドーロタイマー</h1>
+
+    <div class="mode-tabs">
+      <button class="mode-btn active" data-mode="work">作業 (25分)</button>
+      <button class="mode-btn" data-mode="short">短休憩 (5分)</button>
+      <button class="mode-btn" data-mode="long">長休憩 (15分)</button>
+    </div>
+
+    <div class="timer-circle" id="timerCircle">
+      <svg class="progress-ring" width="240" height="240">
+        <circle class="progress-ring__bg" cx="120" cy="120" r="108" />
+        <circle class="progress-ring__fg" id="progressRing" cx="120" cy="120" r="108" />
+      </svg>
+      <div class="time-display" id="timeDisplay">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="btn primary">開始</button>
+      <button id="pauseBtn" class="btn" disabled>一時停止</button>
+      <button id="resetBtn" class="btn">リセット</button>
+    </div>
+
+    <div class="task-section">
+      <input type="text" id="taskInput" placeholder="今取り組んでいるタスクは?" maxlength="60">
+      <div class="current-task" id="currentTaskLabel"></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value" id="todayCount">0</span>
+        <span class="stat-label">今日完了</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="totalCount">0</span>
+        <span class="stat-label">合計完了</span>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <h2>履歴</h2>
+        <button id="clearHistoryBtn" class="link-btn">履歴を削除</button>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
